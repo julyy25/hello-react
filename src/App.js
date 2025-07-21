@@ -1,4 +1,9 @@
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
+import FollowingComponent from "./components/FollowingComponent";
+import FollowersComponent from "./components/FollowersComponent";
+import Login from "./components/Login";
+import Logout from "./components/Logout";
+import BodyguardComponent from "./components/BodyguardComponent";
 
 // USER DEFFINED TAG :: CONFIGURATION
 function App() {
@@ -33,54 +38,6 @@ function App() {
       </Routes>
     </BrowserRouter>
   );
-}
-
-// USER DEFINED TAG :: <Hello />
-function FollowingComponent() {
-  return (
-    <div>
-      <h1>Following...</h1>
-    </div>
-  );
-}
-
-function FollowersComponent() {
-  return (
-    <div>
-      <h1>Followers</h1>
-    </div>
-  );
-}
-
-function Login() {
-  const handleLogin = () => {
-    localStorage.setItem("token", "dummy-token");
-  };
-
-  return (
-    <div>
-      <h1>Login</h1>
-      <button onClick={handleLogin}>Click to Login</button>
-    </div>
-  );
-}
-
-function Logout() {
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-  };
-
-  return (
-    <div>
-      <h1>Logout </h1>
-      <button onClick={handleLogout}>Click to Logout</button>
-    </div>
-  );
-}
-
-function BodyguardComponent({ children }) {
-  let token = localStorage.getItem("token");
-  return token ? children : <Login />;
 }
 
 export default App;
