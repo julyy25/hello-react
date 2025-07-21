@@ -7,7 +7,8 @@ function Login() {
     localStorage.setItem("token", "dummy-token");
 
     // Redirect to the following page after login
-    navigate("/following", { replace: true });
+    // navigate("/following", { replace: true });
+    window.location.href = "/following";
   };
 
   return (
