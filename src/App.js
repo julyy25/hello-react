@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
-
+// USER DEFFINED TAG
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>My Project</h1>
+
+      <Hello />
+      <Hello />
+      <Hello />
+    </div>
+  );
+}
+
+// USER DEFINED TAG :: <Hello />
+function Hello() {
+  return (
+    <div>
+      <h1>Hello World</h1>
+      <p>This is a simple React application.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>
+        Donec vel mauris quam. Sed euismod, nisi vel consectetur interdum, nisl nisi aliquet nunc, nec aliquet nunc nisl
+        eget nunc.
+      </p>
+      <p>Curabitur non libero nec leo facilisis tincidunt.</p>
+      <p>Phasellus euismod, nisi vel consectetur interdum, nisl nisi aliquet nunc</p>
     </div>
   );
 }
