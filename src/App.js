@@ -4,15 +4,17 @@ import FollowersComponent from "./components/FollowersComponent";
 import Login from "./components/Login";
 import Logout from "./components/Logout";
 import BodyguardComponent from "./components/BodyguardComponent";
+import AboutusComponent from "./components/AboutusComponent";
 
 // USER DEFFINED TAG :: CONFIGURATION
 function App() {
   return (
     <BrowserRouter>
       <h1>My Insta</h1>
+
       <div>
         <Link to="/following">Following</Link> | <Link to="/followers">Followers</Link> | <Link to="/login">Login</Link>{" "}
-        | <Link to="/logout">Logout</Link>
+        | <Link to="/logout">Logout</Link> | <Link to="/aboutus">About Us</Link>
       </div>
 
       <Routes>
@@ -35,6 +37,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/" element={<FollowersComponent />} />
+        <Route path="/aboutus" element={<AboutusComponent />} />
       </Routes>
     </BrowserRouter>
   );
