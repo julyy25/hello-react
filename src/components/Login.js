@@ -6,9 +6,13 @@ function Login() {
 
   const handleLogin = async () => {
     try {
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
       // Integration with backend for login
       const url = "http://localhost:8080/auth/login";
-      const payload = { username: "cdac123", password: "cdac" };
+      // const payload = { username: "cdac123", password: "cdac" };
+      const payload = { username: username, password: password };
       const response = await axios.post(url, payload);
 
       if (response.status === 200) {
@@ -30,7 +34,12 @@ function Login() {
 
   return (
     <div>
-      <h1>Login</h1>
+      <div>
+        <input type="text" name="" id="username" placeholder="Enter username" />
+      </div>
+      <div>
+        <input type="password" name="" id="password" placeholder="Enter password" />
+      </div>
       <button onClick={handleLogin}>Click to Login</button>
     </div>
   );
