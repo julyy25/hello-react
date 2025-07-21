@@ -1,31 +1,86 @@
-// USER DEFFINED TAG
+import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
+
+// USER DEFFINED TAG :: CONFIGURATION
 function App() {
   return (
-    <div>
-      <h1>My Project</h1>
+    <BrowserRouter>
+      <h1>My Insta</h1>
+      <div>
+        <Link to="/following">Following</Link> | <Link to="/followers">Followers</Link> | <Link to="/login">Login</Link>{" "}
+        | <Link to="/logout">Logout</Link>
+      </div>
 
-      <Hello />
-      <Hello />
-      <Hello />
-    </div>
+      <Routes>
+        <Route
+          path="/following"
+          element={
+            <BodyguardComponent>
+              <FollowingComponent />
+            </BodyguardComponent>
+          }
+        />
+        <Route
+          path="/followers"
+          element={
+            <BodyguardComponent>
+              <FollowersComponent />
+            </BodyguardComponent>
+          }
+        />
+        <Route path="/login" element={<Login />} />
+        <Route path="/logout" element={<Logout />} />
+        <Route path="/" element={<FollowersComponent />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
 // USER DEFINED TAG :: <Hello />
-function Hello() {
+function FollowingComponent() {
   return (
     <div>
-      <h1>Hello World</h1>
-      <p>This is a simple React application.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      <p>
-        Donec vel mauris quam. Sed euismod, nisi vel consectetur interdum, nisl nisi aliquet nunc, nec aliquet nunc nisl
-        eget nunc.
-      </p>
-      <p>Curabitur non libero nec leo facilisis tincidunt.</p>
-      <p>Phasellus euismod, nisi vel consectetur interdum, nisl nisi aliquet nunc</p>
+      <h1>Following...</h1>
     </div>
   );
+}
+
+function FollowersComponent() {
+  return (
+    <div>
+      <h1>Followers</h1>
+    </div>
+  );
+}
+
+function Login() {
+  const handleLogin = () => {
+    localStorage.setItem("token", "dummy-token");
+  };
+
+  return (
+    <div>
+      <h1>Login</h1>
+      <button onClick={handleLogin}>Click to Login</button>
+    </div>
+  );
+}
+
+function Logout() {
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+  };
+
+  return (
+    <div>
+      <h1>Logout </h1>
+      <button onClick={handleLogout}>Click to Logout</button>
+    </div>
+  );
+}
+
+function BodyguardComponent({ children }) {
+  let token = localStorage.getItem("token");
+  return token ? children : <Login />;
 }
 
 export default App;
