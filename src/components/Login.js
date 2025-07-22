@@ -6,6 +6,7 @@ function Login() {
 
   const handleLogin = async () => {
     try {
+      // Not Recommended
       const username = document.getElementById("username").value;
       const password = document.getElementById("password").value;
 

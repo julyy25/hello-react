@@ -11,9 +11,10 @@ function DynamicLinks() {
       </div>
     );
   } else {
+    // Not Logged In
     return (
       <div>
-        <Link to="/login">Login</Link>| <Link to="/aboutus">About Us</Link>
+        <Link to="/login">Login</Link> |<Link to="/register">Register</Link> | <Link to="/aboutus">About Us</Link>
       </div>
     );
   }

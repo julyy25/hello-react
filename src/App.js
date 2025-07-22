@@ -6,6 +6,7 @@ import Logout from "./components/Logout";
 import BodyguardComponent from "./components/BodyguardComponent";
 import AboutusComponent from "./components/AboutusComponent";
 import DynamicLinks from "./components/DynamicLinks";
+import RegisterComponent from "./components/RegisterComponent";
 
 // USER DEFFINED TAG :: CONFIGURATION
 function App() {
@@ -36,6 +37,7 @@ function App() {
         <Route path="/logout" element={<Logout />} />
         <Route path="/" element={<FollowersComponent />} />
         <Route path="/aboutus" element={<AboutusComponent />} />
+        <Route path="/register" element={<RegisterComponent />} />
       </Routes>
     </BrowserRouter>
   );
