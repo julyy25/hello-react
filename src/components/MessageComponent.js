@@ -41,18 +41,28 @@ function MessageComponent() {
   };
 
   return (
-    <div>
-      <h1>Message Component</h1>
+    <div className="row justify-content-center ">
+      <div className="col-12 col-md-6 bg-light p-5 mt-">
+        <div>
+          <input
+            className="form-control form-control-lg mb-3"
+            type="text"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            placeholder="Enter Message..."
+          />
+          <input className="btn btn-outline-success" type="button" value="CreateMessage" onClick={createMessage} />
+          <input className="btn btn-outline-success" type="button" value="ReadAllMessage" onClick={readAllMessages} />
 
-      <input type="text" value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Enter Message..." />
-      <input type="button" value="CreateMessage" onClick={createMessage} />
-      <input type="button" value="ReadAllMessage" onClick={readAllMessages} />
-
-      {messages.map((item, index) => (
-        <div key={index}>
-          <h3>{item.message}</h3>
+          <div className="mb-3 mt-3">
+            {messages.map((item, index) => (
+              <div key={index} className="alert alert-success mt-1 mb-0">
+                <h3>{item.message}</h3>
+              </div>
+            ))}
+          </div>
         </div>
-      ))}
+      </div>
     </div>
   );
 }

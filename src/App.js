@@ -13,8 +13,6 @@ import MessageComponent from "./components/MessageComponent";
 function App() {
   return (
     <BrowserRouter>
-      <h1>My Insta</h1>
-
       <DynamicLinks />
 
       <Routes>
