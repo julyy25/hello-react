@@ -22,7 +22,7 @@ function Login() {
 
         // Redirect to the following page after login
         // navigate("/following", { replace: true });
-        window.location.href = "/following";
+        window.location.href = "/message";
       } else {
         alert("Login failed");
         return;
