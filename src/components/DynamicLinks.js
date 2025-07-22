@@ -6,8 +6,8 @@ function DynamicLinks() {
   if (token) {
     return (
       <div>
-        <Link to="/following">Following</Link> |<Link to="/followers">Followers</Link> |<Link to="/logout">Logout</Link>{" "}
-        |<Link to="/aboutus">About Us</Link>
+        <Link to="/message">Message</Link> | <Link to="/following">Following</Link> |
+        <Link to="/followers">Followers</Link> |<Link to="/logout">Logout</Link> |<Link to="/aboutus">About Us</Link>
       </div>
     );
   } else {

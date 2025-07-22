@@ -7,6 +7,7 @@ import BodyguardComponent from "./components/BodyguardComponent";
 import AboutusComponent from "./components/AboutusComponent";
 import DynamicLinks from "./components/DynamicLinks";
 import RegisterComponent from "./components/RegisterComponent";
+import MessageComponent from "./components/MessageComponent";
 
 // USER DEFFINED TAG :: CONFIGURATION
 function App() {
@@ -33,6 +34,15 @@ function App() {
             </BodyguardComponent>
           }
         />
+        <Route
+          path="/message"
+          element={
+            <BodyguardComponent>
+              <MessageComponent />
+            </BodyguardComponent>
+          }
+        />
+
         <Route path="/login" element={<Login />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/" element={<FollowersComponent />} />
